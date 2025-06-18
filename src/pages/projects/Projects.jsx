@@ -34,8 +34,8 @@ export default function Projects() {
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen px-6 py-16 bg-gradient-to-br from-violet-100 via-white to-violet-200">
+    
+      <div id="projects" className="min-h-screen px-6 py-16 bg-gradient-to-br from-violet-100 via-white to-violet-200">
         <h1 className="text-4xl sm:text-5xl font-bold text-center text-violet-700 mb-12">
           My Projects
         </h1>
@@ -74,6 +74,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </Layout>
+   
   );
 }

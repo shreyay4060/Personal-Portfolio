@@ -5,7 +5,7 @@ export default function AboutPage() {
     const skills = ["HTML5" , "CSS3" ,"JavaScript","React","Tailwind CSS","UI/UX Design","Redux.js" , "Google Firebase"]
   return (
     <Layout>
-      <div className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 py-12 bg-gradient-to-br from-violet-100 via-white to-violet-200 gap-12">
+      <div id="about" className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 py-12 bg-gradient-to-br from-violet-100 via-white to-violet-200 gap-12">
         
         {/* Text Section */}
         <div className="max-w-xl text-center md:text-left">

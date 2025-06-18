@@ -22,8 +22,8 @@ export default function Service() {
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen px-6 py-16 bg-gradient-to-br from-violet-100 via-white to-violet-200 text-center">
+    <>
+      <div id="service" className="min-h-screen px-6 py-16 bg-gradient-to-br from-violet-100 via-white to-violet-200 text-center">
         <h1 className="text-4xl sm:text-5xl font-bold text-violet-700 mb-6">My Services</h1>
         <p className="text-gray-600 mb-12 text-lg max-w-2xl mx-auto">
           I offer a variety of services to help you build, design, and launch high-quality web products.
@@ -42,6 +42,6 @@ export default function Service() {
           ))}
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
