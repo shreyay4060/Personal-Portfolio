@@ -18,6 +18,18 @@ export default function Navbar() {
           <li className="transform transition duration-300 hover:scale-110 hover:text-violet-600">
             <a href="#projects">Projects</a>
           </li>
+          <li className="transform transition duration-300 hover:scale-110 hover:text-violet-600">
+            <a
+              href="/images/resume.pdf"
+              
+              id="downloadResume"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-download"></i> Resume
+            </a>
+          </li>
         </ul>
         <button className="transform transition duration-300 hover:scale-110 hover:bg-violet-700 bg-violet-500 text-white px-3 py-1.5 rounded-md border">
           <a href="#contact">Contact</a>
