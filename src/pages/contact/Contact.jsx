@@ -15,23 +15,21 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false);
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     const { name, value } = event.target;
     setContact((prev) => ({
       ...prev,
       [name]: value,
     }));
-  }
+  };
 
   const submitContact = async (event) => {
     event.preventDefault();
     setLoading(true);
-    try {
-      const contactRef = collection(fireDB, "contacts");
-      await addDoc(contactRef, {
-        ...contact,
-      });
 
+    try {
+      const contactRef = collection(fireDB, "portfolioContacts");
+      await addDoc(contactRef, contact);
       toast.success("Message sent successfully");
 
       // Reset form
@@ -55,64 +53,21 @@ export default function Contact() {
         id="contact"
         className="min-h-screen pt-20 px-4 py-12 bg-gradient-to-br from-violet-100 via-white to-violet-200"
       >
+        {/* Header */}
         <h1 className="text-3xl sm:text-4xl font-bold text-center text-violet-700 mb-3">
           Contact Me
         </h1>
         <p className="text-center text-gray-600 text-lg mb-12">
-          I’d love to hear from you! Feel free to reach out for any project, collaboration, or just to say hello.
+          I’d love to hear from you! Feel free to reach out for any project,
+          collaboration, or just to say hello.
         </p>
 
-        {/* Contact Info */}
-        <div className="space-y-4 text-gray-700 text-sm max-w-sm mx-auto mb-10">
-          <div>
-            <h3 className="font-semibold text-violet-700 text-sm mb-1">Email</h3>
-            <p>
-              <a href="mailto:shreyay4060@gmail.com" className="hover:underline">
-                shreyay4060@gmail.com
-              </a>
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-violet-700 text-sm mb-1">Phone</h3>
-            <p>
-              <a href="tel:8421915279" className="hover:underline">
-                8421915279
-              </a>
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-violet-700 text-sm mb-1">Location</h3>
-            <p>Kadepur, Sangli, Maharashtra</p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-violet-700 text-sm mb-1">Socials</h3>
-            <p>
-              <a
-                href="https://github.com/shreyay4060"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-violet-600 hover:underline"
-              >
-                GitHub
-              </a>{" "}
-              |{" "}
-              <a
-                href="https://www.linkedin.com/in/shreya-yadav-53286028b"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-violet-600 hover:underline"
-              >
-                LinkedIn
-              </a>
-            </p>
-          </div>
-        </div>
-
-        {/* Contact Form */}
-        <div className="flex justify-center">
+        {/* Form and Info */}
+        <div className="flex flex-col lg:flex-row items-start justify-center gap-10">
+          {/* Contact Form */}
           <form
             onSubmit={submitContact}
-            className="bg-white px-6 py-8 rounded-md shadow-md border border-violet-300 space-y-3 w-full max-w-sm"
+            className="bg-white px-6 py-8 rounded-md shadow-md border border-violet-300 space-y-4 w-full max-w-sm"
           >
             <div>
               <label className="block mb-1 text-xs text-gray-700 font-medium">Name</label>
@@ -158,6 +113,55 @@ export default function Contact() {
               {loading ? "Sending..." : "Send"}
             </button>
           </form>
+
+          {/* Contact Info */}
+          <div className="text-sm text-gray-700 space-y-5 max-w-sm">
+            <div>
+              <h3 className="font-semibold text-violet-700 text-sm mb-1">Email</h3>
+              <p>
+                <a href="mailto:shreyay4060@gmail.com" className="hover:underline">
+                  shreyay4060@gmail.com
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-violet-700 text-sm mb-1">Phone</h3>
+              <p>
+                <a href="tel:8421915279" className="hover:underline">
+                  8421915279
+                </a>
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-violet-700 text-sm mb-1">Location</h3>
+              <p>Kadepur, Sangli, Maharashtra</p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-violet-700 text-sm mb-1">Socials</h3>
+              <p>
+                <a
+                  href="https://github.com/shreyay4060"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-violet-600 hover:underline"
+                >
+                  GitHub
+                </a>{" "}
+                |{" "}
+                <a
+                  href="https://www.linkedin.com/in/shreya-yadav-53286028b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-violet-600 hover:underline"
+                >
+                  LinkedIn
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </Layout>
