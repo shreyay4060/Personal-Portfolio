@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <div className="fixed top-0 left-0 w-full z-50 border-b bg-gradient-to-br from-violet-200 via-white to-violet-100">
+    <div className="fixed top-0 left-0 px-6 w-full z-50 border-b bg-gradient-to-br from-violet-200 via-white to-violet-100">
       <div className="flex font-semibold text-md justify-between items-center flex-col lg:flex-row gap-4 p-4">
         <div className="font-bold text-xl text-violet-600">Shreya</div>
         <ul className="flex gap-5">
