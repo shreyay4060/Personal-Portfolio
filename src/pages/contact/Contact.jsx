@@ -63,7 +63,7 @@ export default function Contact() {
         </p>
 
         {/* Form and Info */}
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center  justify-center gap-10">
           {/* Contact Form */}
           <form
             onSubmit={submitContact}
@@ -115,19 +115,16 @@ export default function Contact() {
           </form>
 
           {/* Contact Info */}
-          <div className="text-sm text-gray-700 space-y-5 max-w-sm">
-            <div>
-              <h3 className="font-semibold text-violet-700 text-sm mb-1">Email</h3>
+          <div className="text-sm  text-gray-700 items-start w-full space-y-5 max-w-sm">
+            <div className="flex justify-between">
               <p>
+              <h3 className="font-semibold text-violet-700 text-sm mb-1">Email</h3>
                 <a href="mailto:shreyay4060@gmail.com" className="hover:underline">
                   shreyay4060@gmail.com
                 </a>
               </p>
-            </div>
-
-            <div>
+              <p className="mr-8">
               <h3 className="font-semibold text-violet-700 text-sm mb-1">Phone</h3>
-              <p>
                 <a href="tel:8421915279" className="hover:underline">
                   8421915279
                 </a>
@@ -135,13 +132,19 @@ export default function Contact() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-violet-700 text-sm mb-1">Location</h3>
-              <p>Kadepur, Sangli, Maharashtra</p>
+              
             </div>
 
-            <div>
-              <h3 className="font-semibold text-violet-700 text-sm mb-1">Socials</h3>
+            <div className="flex justify-between">
               <p>
+              <h3 className="font-semibold text-violet-700 text-sm mb-1">Location</h3>
+                Kadepur, Sangli, Maharashtra
+                </p>
+            
+
+            
+              <p>
+              <h3 className="font-semibold text-violet-700 text-sm mb-1">Socials</h3>
                 <a
                   href="https://github.com/shreyay4060"
                   target="_blank"
