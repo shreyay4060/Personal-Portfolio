@@ -24,6 +24,14 @@ export default function Contact() {
   };
 
   const submitContact = async (event) => {
+    if(!contact.name || !contact.email || !contact.message) {
+      return toast.error("Please fill all fields");
+        
+    }
+    if(contact.email && !contact.email.includes("@")) {
+        return toast.error("Please enter a valid email address");
+        
+    }
     event.preventDefault();
     setLoading(true);
 
@@ -40,6 +48,7 @@ export default function Contact() {
         time: Timestamp.now(),
         date: new Date().toLocaleDateString(),
       });
+      setLoading(false)
     } catch (error) {
       toast.error("Please try again");
     } finally {
